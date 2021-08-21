@@ -1,0 +1,28 @@
+{
+    "qq_num":1784664232,
+    "master":845541909,
+    "group_pass":[],
+    "frend_pass":[],
+    "service":{
+        "wiki":{
+            "online":true,
+            "keyword":"维基百科",
+            "how_to_use":"维基百科 苹果"
+        },
+        "notify":{
+            "online":true,
+            "keyword":"学院公告",
+            "how_to_use":"学院公告"
+        },
+        "setu":{
+            "online":true,
+            "keyword":"好看的图",
+            "how_to_use":"<指令不固定>"
+        },
+        "findanswer":{
+            "online":true,
+            "keyword":"网课查题",
+            "how_to_use":"搜题 题目"
+        }
+    }
+}
