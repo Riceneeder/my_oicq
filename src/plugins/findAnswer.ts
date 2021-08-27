@@ -7,7 +7,7 @@ import axios from "axios";
 var findAnswer = (question:string)=>{
     var BaseUrl = 'http://q.zhizhuoshuma.cn/?question=';
     var url = encodeURI(BaseUrl+question);
-    let answer = new Promise(async (resolve,reject)=>{
+    let answer = new Promise<string>(async (resolve,reject)=>{
         await axios.get(url).then(
             re=>{
                 let redress = /{.*?}/ ;

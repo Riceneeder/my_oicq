@@ -1,14 +1,15 @@
 import axios from "axios";
 import { load } from "cheerio";
 import getRndInteger from "../tools/getRndInteger";
+import imgaudit from "../tools/imgaudit"
 /**
  * 涩图
  * @returns 
  */
 var setu = ()=>{
-    let Tu = new Promise(async (resolve,reject)=>{
+    let Tu = new Promise<string>(async (resolve,reject)=>{
         await axios.get(`https://xibi.tv/beauty/${getRndInteger(1,3226)}.html`).then(
-            re=>{
+            async re=>{
                 var $ = load(re.data);
                 var list:any = [];
                 $('img.alignnone').each((i,e)=>{
@@ -17,7 +18,8 @@ var setu = ()=>{
                 });
                 var setunum = getRndInteger(0,list.length-1);
                 var setuUrl = list[setunum];
-                var setu = `=====[CQ:image,file=${setuUrl}]=====`;
+                var is_img_ok = await imgaudit(setuUrl);
+                var setu = `---💃---${is_img_ok}-[CQ:image,file=${setuUrl}]`;
                 resolve(setu);
             }
         ).catch(

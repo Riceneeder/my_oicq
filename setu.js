@@ -1,14 +1,13 @@
 const axios = require("axios");
 
-var question = '是';
-var BaseUrl = 'http://q.zhizhuoshuma.cn/?question=';
-var url = encodeURI(BaseUrl+question);
+// var question = '你是';
+var url = 'http://yubanapi.top/API/r18/index.php?type=string';
+// var url = encodeURI(BaseUrl+question);
 
-axios.get(url,{setTimeout:5000}).then(
+axios.get(url).then(
     re=>{
-        let zhen = /{.*?}/ ;
-        let res = JSON.parse(zhen.exec(re.data)[0]);
-        console.log(res);
+
+        console.log(re.data.ImgUrl);
     }
 )
 
